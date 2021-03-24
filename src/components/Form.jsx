@@ -4,17 +4,7 @@ import { FormSuccessModal } from '@components/FormSuccessModal'
 import { FormErrorModal } from '@components/FormErrorModal'
 import '@styles/components/Form.scss'
 
-export const Form = ({ formValues, onChange, onSubmit }) => {
-  const [ modalIsOpen, setModalIsOpen ] = useState(false)
-
-  const handleClick = e => {
-    setModalIsOpen(true)
-  }
-
-  const handleCloseModal = () => {
-    setModalIsOpen(false)
-  }
-
+export const Form = ({ formValues, onChange, onSubmit, error, modalIsOpen, handleCloseModal, countries }) => {
   return (
     <form className="Form" onSubmit={onSubmit}>
       <div>
@@ -57,9 +47,9 @@ export const Form = ({ formValues, onChange, onSubmit }) => {
                 value={formValues.country}
               />
               <datalist id="countries">
-                <option value="Colombia"></option>
-                <option value="Perú"></option>
-                <option value="México"></option>
+                {
+                  countries.map((country, index) => <option value={country.name} key={index}></option>)
+                }
               </datalist>
             </label>
             <label htmlFor="id">
@@ -79,17 +69,17 @@ export const Form = ({ formValues, onChange, onSubmit }) => {
       </div>
       <div>
         <button
-          onClick={handleClick}
           className="Form__button Form__button--primary"
         >Enviar</button>
-        <FormSuccessModal
-          isOpen={modalIsOpen}
-          onClose={handleCloseModal}
-        />
-{/*         <FormErrorModal
-          isOpen={modalIsOpen}
-          onClose={handleCloseModal}
-        /> */}
+        {
+          !error ? <FormSuccessModal
+            isOpen={modalIsOpen}
+            onClose={handleCloseModal}
+          /> : <FormErrorModal
+            isOpen={modalIsOpen}
+            onClose={handleCloseModal}
+          />
+        }
         <button className="Form__button Form__button--ghost" type="button">Cancelar</button>
       </div>
     </form>

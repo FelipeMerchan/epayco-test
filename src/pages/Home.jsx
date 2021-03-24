@@ -1,43 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { Header } from '@components/Header'
 import { Form } from '@components/Form'
 import { Footer } from '@components/Footer'
+import { PageLoading } from '@components/PageLoading'
 import '@styles/pages/Home.scss'
 
-export const Home = () => {
-  const [ data, setData ] = useState({
-    form: {
-      firstName: '',
-      lastName: '',
-      country: '',
-      id: '',
-    }
-  })
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(false)
-
-  const handleChange = e => {
-    setData({
-      form: {
-        ...data.form,
-        [e.target.name]: e.target.value,
-      }
-    })
-  }
-
-  const handleSubmit = async e => {
-    e.preventDefault()
-    setLoading(true)
-    try {
-      
-      setLoading(false)
-    } catch {
-      setError(error)
-      setLoading(false)
-    }
-  }
-
+export const Home = ({ formValues, isLoading, error, handleChange, handleSubmit, modalIsOpen, handleCloseModal, countries }) => {
   return (
     <>
       <div className="Home">
@@ -45,11 +14,18 @@ export const Home = () => {
         <main className="Main">
           <div className="wrapper">
             <div className="Main-content">
-              <Form
-                formValues={data.form}
-                onChange={handleChange}
-                onSubmit={handleSubmit}
-              />
+              {isLoading ? (
+              <PageLoading />
+              ) : <Form
+                  formValues={formValues}
+                  onChange={handleChange}
+                  onSubmit={handleSubmit}
+                  error={error}
+                  modalIsOpen={modalIsOpen}
+                  handleCloseModal={handleCloseModal}
+                  countries={countries}
+                />
+              }
             </div>
           </div>
         </main>
