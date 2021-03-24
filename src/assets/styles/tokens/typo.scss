@@ -1,0 +1,38 @@
+
+//  ████████╗██╗   ██╗██████╗  ██████╗
+//  ╚══██╔══╝╚██╗ ██╔╝██╔══██╗██╔═══██╗
+//     ██║    ╚████╔╝ ██████╔╝██║   ██║
+//     ██║     ╚██╔╝  ██╔═══╝ ██║   ██║
+//     ██║      ██║   ██║     ╚██████╔╝
+//     ╚═╝      ╚═╝   ╚═╝      ╚═════╝
+//
+
+@font-face {
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/src/assets/static/fonts/segoe-ui.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/src/assets/static/fonts/segoe-ui-bold.woff') format('woff');
+}
+
+$font: 'Roboto', system-ui;
+$secondary-font: 'Segoe UI', system-ui;
+
+// Typos
+$h1: 2rem;
+$h2: 1.6rem;
+$p: 1.3rem;
+$button: 1.3rem;
+$small: 1rem;
+
+// Typo Bolds
+
+$regular: 400;
+$medium: 500;
+$bold: 700;

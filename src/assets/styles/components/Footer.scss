@@ -1,0 +1,54 @@
+@import '../tokens/colors.scss';
+@import '../tokens/typo.scss';
+@import '../tokens/spacing.scss';
+
+.Footer {
+  border-block-start: 1px solid $gray-light-2;
+  padding: $space-2;
+  background-color: $white;
+
+  span {
+    font-size: $p;
+  }
+
+  &__logoWrapper {
+    &:not(:last-child) {
+      margin-block-start: $space-2;
+      margin-block-end: $space-2;
+    }
+
+    &--davivienda {
+      inline-size: 21.4rem;
+    }
+    &--epayco {
+      inline-size: 7.6rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    block-size: 4.9rem;
+    padding: 0 $space-2;
+
+    & > div {
+      display: inherit;
+      align-items: inherit;
+    }
+
+    &__logoWrapper {
+      &:not(:last-child) {
+        margin: 0;
+        margin-inline-end: $space-2;
+      }
+
+      &--epayco {
+        margin-block-start: $space;
+      }
+    }
+  }
+}

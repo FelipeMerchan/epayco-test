@@ -1,0 +1,50 @@
+@import '../tokens/colors.scss';
+@import '../tokens/typo.scss';
+@import '../tokens/spacing.scss';
+
+.Modal {
+  position: fixed;
+  top:    0;
+  right:  0;
+  bottom: 0;
+  left:   0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  &__container {
+    position: relative;
+    inline-size: 90%;
+    max-inline-size: 38rem;
+    padding: $space-2;
+    border: 5px solid #8E8E8F;
+    text-align: center;
+    border-radius: .8rem;
+    background-color: $white;
+  }
+
+  &__close-button {
+    position: absolute;
+    top:   1.5rem;
+    right: 1.5rem;
+    border: 0;
+    inline-size: 1.3rem;
+    block-size: 1.3rem;
+    background-color: #F5F5F5;
+    padding: 0.5rem 1rem;
+    background-image: url('https://res.cloudinary.com/dy1xcx7kw/image/upload/v1616550966/epayco/close-icon_yvvgqd.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Modal {
+
+    &__container {
+      padding: $space-2 5.4rem;
+    }
+  }
+}

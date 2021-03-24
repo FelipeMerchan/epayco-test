@@ -1,0 +1,30 @@
+@import '../tokens/spacing.scss';
+
+.button {
+  position: fixed;
+  z-index: 10;
+  top:   $space-2;
+  right: $space-2;
+  border: 0;
+  background-color: transparent;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .button {
+    display: none;
+  }
+
+  .Layout {
+    display: grid;
+    grid-template-columns: 23.9rem 1fr;
+    grid-template-rows: 1fr 4.9rem;
+    grid-template-areas:
+                        "sidebar primary"
+                        "sidebar footer";
+    block-size: 100vh;
+  }
+}

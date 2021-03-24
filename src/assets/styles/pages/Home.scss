@@ -1,0 +1,22 @@
+@import '../tokens/spacing.scss';
+
+.Home {
+  & .Main {
+    &-content {
+      padding: $space-2;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Home {
+    grid-area: primary;
+
+    & .Main {
+      &-content {
+        padding: $space-3;
+        padding-block-end: 5rem;
+      }
+    }
+  }
+}

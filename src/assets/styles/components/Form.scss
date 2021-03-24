@@ -1,0 +1,112 @@
+@import '../tokens/colors.scss';
+@import '../tokens/spacing.scss';
+@import '../tokens/typo.scss';
+
+.Form {
+  margin-block-end: $space-2;
+
+  & > div:first-child {
+    margin-block-end: $space-3;
+    border: 1px solid $gray-light;
+    background-color: $white;
+    border-radius: .5rem;
+
+    & > div {
+      padding: 0 $space-2;
+      padding-block-end: 5rem;
+    }
+  }
+
+  &__title {
+    padding-inline-start: $space-2;
+  }
+
+  hr {
+    margin-block-end: $space-3;
+  }
+
+  &__description {
+    margin: 0;
+    margin-block-end: $space-5;
+  }
+
+  &__inputsWrapper {
+    display: grid;
+    grid-row-gap: $space-3;
+  }
+
+  label {
+    display: block;
+  }
+
+  span {
+    display: block;
+    font-size: $h2;
+    margin-block-end: $space-2;
+
+    sup {
+      color: $negative;
+    }
+  }
+
+  input {
+    padding: $space;
+    inline-size: 100%;
+    block-size: 4.5rem;
+    border: 1px solid $gray-light;
+    font-size: $p;
+    border-radius: .5rem;
+  }
+
+  &__button {
+    inline-size: 13rem;
+    block-size: 3.7rem;
+    border: 0;
+    border-radius: .3rem;
+    cursor: pointer;
+
+    &--primary {
+      margin-inline-end: $space-5;
+      color: $white;
+      background-color: $secondary-action;
+    }
+
+    &--ghost {
+      border: 1px solid $secondary-action;
+      color: $secondary-action;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Form {
+    inline-size: 100%;
+    max-inline-size: 86.5rem;
+
+    & > div:first-child {
+      margin-block-end: $space-3;
+      border: 1px solid $gray-light;
+      background-color: $white;
+      border-radius: .5rem;
+
+      & > div {
+        padding: 0 $space-3;
+        padding-block-end: 5rem;
+      }
+    }
+
+    &__title {
+      margin-block-start: $space-3;
+      margin-block-end: $space-3;
+      padding-inline-start: $space-3;
+    }
+
+    &__inputsWrapper {
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 8rem;
+      grid-row-gap: $space-5;
+      inline-size: 100%;
+      max-inline-size: 78.5rem;
+    }
+  }
+}

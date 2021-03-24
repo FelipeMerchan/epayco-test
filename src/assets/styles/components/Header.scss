@@ -1,0 +1,23 @@
+@import '../tokens/colors.scss';
+@import '../tokens/spacing.scss';
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  block-size: 7.2rem;
+  padding: $space $space-2;
+  background-color: $white;
+
+  &__logoWrapper {
+    inline-size: 12rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Header {
+    &__logoWrapper {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import '../tokens/colors.scss';
+
+body {
+  background-color: $background-gray;
+}
+
+hr {
+  border-color: $gray-light;
+}
+
+p {
+  color: $gray;
+}

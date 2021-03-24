@@ -1,0 +1,30 @@
+@import '../tokens/spacing.scss';
+@import '../tokens/typo.scss';
+@import '../tokens/colors.scss';
+
+.FormSuccessModal {
+
+  &__iconWrapper {
+    inline-size: 7.5rem;
+    margin: 0 auto;
+    margin-block-end: $space-4;
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 2.4rem;
+    color: #00000054;
+  }
+
+  &__button {
+    border: 0;
+    padding: $space;
+    inline-size: 100%;
+    margin-block-start: $space-5;
+    font-size: 1.8rem;
+    color: $white;
+    font-weight: $regular;
+    border-radius: .5rem;
+    background-color: $secondary-action;
+  }
+}

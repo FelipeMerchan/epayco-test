@@ -1,0 +1,97 @@
+import React, { useState } from 'react'
+
+import { FormSuccessModal } from '@components/FormSuccessModal'
+import { FormErrorModal } from '@components/FormErrorModal'
+import '@styles/components/Form.scss'
+
+export const Form = ({ formValues, onChange, onSubmit }) => {
+  const [ modalIsOpen, setModalIsOpen ] = useState(false)
+
+  const handleClick = e => {
+    setModalIsOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setModalIsOpen(false)
+  }
+
+  return (
+    <form className="Form" onSubmit={onSubmit}>
+      <div>
+        <h1 className="Form__title">Información del formulario</h1>
+        <hr />
+        <div>
+          <p className="Form__description">Ingrese el titulo y la descripción que visualizarán los usuarios durante el proceso de pago</p>
+          <div className="Form__inputsWrapper">
+            <label htmlFor="name">
+              <span>Nombre <sup>*</sup></span>
+              <input
+                onChange={onChange}
+                type="text"
+                id="name"
+                name="firstName"
+                autoComplete="given-name"
+                required
+                value={formValues.firstName}
+              />
+            </label>
+            <label htmlFor="last-name">
+              <span>Apellido <sup>*</sup></span>
+              <input
+                onChange={onChange}
+                type="text"
+                id="last-name"
+                name="lastName"
+                autoComplete="family-name"
+                required
+                value={formValues.lastName}
+              />
+            </label>
+            <label>
+              <span>Seleccione un pais <sup>*</sup></span>
+              <input
+                onChange={onChange}
+                list="countries"
+                id="country"
+                name="country"
+                value={formValues.country}
+              />
+              <datalist id="countries">
+                <option value="Colombia"></option>
+                <option value="Perú"></option>
+                <option value="México"></option>
+              </datalist>
+            </label>
+            <label htmlFor="id">
+              <span>Número de documento <sup>*</sup></span>
+              <input
+                onChange={onChange}
+                type="number"
+                id="id"
+                name="id"
+                autoComplete="on"
+                required
+                value={formValues.id}
+              />
+            </label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button
+          onClick={handleClick}
+          className="Form__button Form__button--primary"
+        >Enviar</button>
+        <FormSuccessModal
+          isOpen={modalIsOpen}
+          onClose={handleCloseModal}
+        />
+{/*         <FormErrorModal
+          isOpen={modalIsOpen}
+          onClose={handleCloseModal}
+        /> */}
+        <button className="Form__button Form__button--ghost" type="button">Cancelar</button>
+      </div>
+    </form>
+  )
+}
