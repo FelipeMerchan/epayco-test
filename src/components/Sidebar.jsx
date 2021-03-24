@@ -21,7 +21,12 @@ export const Sidebar = ({ isOpen }) => {
           </li>
           <li>
             <Link to="/clientes" exact="true">
-              <CustomersOutline /><span>Clientes</span>
+              <img
+                src="https://res.cloudinary.com/dy1xcx7kw/image/upload/v1616561496/epayco/customers-outline_uo3dq3.svg"
+                width="24"
+                role="presentation"
+              />
+              <span>Clientes</span>
             </Link>
           </li>
         </ul>

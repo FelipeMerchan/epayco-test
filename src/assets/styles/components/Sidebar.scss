@@ -47,6 +47,10 @@
       align-items: center;
     }
 
+    img {
+      inline-size: 2.4rem;
+    }
+
     span {
       margin-inline-start: $space-2;
       color: $white;
